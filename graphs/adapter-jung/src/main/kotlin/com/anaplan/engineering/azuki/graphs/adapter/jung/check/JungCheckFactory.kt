@@ -14,7 +14,6 @@ class JungCheckFactory : GraphCheckFactory {
 
     override fun pathExists(graphName: String, from: Any, to: Any, result: Boolean) =
         PathExistsCheck(graphName, from, to, result)
-
 }
 
 interface JungCheck : Check {
