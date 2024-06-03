@@ -50,7 +50,7 @@ object GraphScriptGenCheckFactory : GraphCheckFactory {
         private val graphName: String,
         private val hasCycles: Boolean,
     ) :
-        HasCyclesBehavior(), ScriptGenerationCheck {
+        HasCyclesBehaviour(), ScriptGenerationCheck {
         override fun getCheckScript() =
             GraphScriptingHelper.scriptifyFunction(GraphChecks::hasCycles, graphName, hasCycles)
     }
@@ -59,7 +59,7 @@ object GraphScriptGenCheckFactory : GraphCheckFactory {
         private val graphName: String,
         private val count: Long
     ) :
-        GetCycleCountBehavior(), ScriptGenerationCheck {
+        GetCycleCountBehaviour(), ScriptGenerationCheck {
         override fun getCheckScript() =
             GraphScriptingHelper.scriptifyFunction(GraphChecks::hasSimpleCycleCount, graphName, count)
     }

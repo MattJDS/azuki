@@ -34,11 +34,11 @@ open class GetShortestPathBehaviour : ReifiedBehavior {
     override val behavior = GraphBehaviours.GetShortestPath
 }
 
-open class HasCyclesBehavior : ReifiedBehavior {
+open class HasCyclesBehaviour : ReifiedBehavior {
     override val behavior = GraphBehaviours.HasCycles
 }
 
-open class GetCycleCountBehavior : ReifiedBehavior {
+open class GetCycleCountBehaviour : ReifiedBehavior {
     override val behavior = GraphBehaviours.GetSimpleCycleCount
 }
 
