@@ -67,4 +67,32 @@ class ShortestPath : GraphScenario() {
             hasShortestPath("graphB", "a", "e", "f", "d")
         }
     }
+
+    @AnalysisScenario
+    fun directedGraph() {
+        given {
+            thereIsADirectedGraph(graphA) {
+                edge("a", "b")
+                edge("b", "c")
+                edge("c", "d")
+                edge("a", "e")
+                edge("d", "e")
+            }
+        }
+        then {
+            hasShortestPath(graphA, "a", "b", "c", "d")
+        }
+    }
+
+    @AnalysisScenario
+    fun noPath() {
+        given {
+            thereIsAnUndirectedGraph(graphA) {
+                vertex("a")
+            }
+        }
+        then {
+            hasShortestPath(graphA, "a")
+        }
+    }
 }

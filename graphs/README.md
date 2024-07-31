@@ -17,7 +17,7 @@ An undirected graph only contains undirected edges.
 **Mixed graph** - A mixed graph is a graph that can contain both directed and undirected edges.
 
 **Walk** – A walk is a sequence of vertices, such that any two consecutive vertices are joined by an edge.
-Note that two vertices are joined by a directed edge if and only if
+Note that two vertices are joined by a directed edge only if
 the direction of the edge matches the sequence order of the vertices.
 
 **Trail** – A trail is a walk in which all edges are distinct.
