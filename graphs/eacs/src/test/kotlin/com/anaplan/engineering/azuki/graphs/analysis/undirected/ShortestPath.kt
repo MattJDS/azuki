@@ -38,4 +38,33 @@ class ShortestPath : GraphScenario() {
             hasShortestPath(graphA, "e", "d", "a", "b", "c")
         }
     }
+
+
+    @AnalysisScenario
+    fun equalPathLengths() {
+        given {
+            thereIsAnUndirectedGraph(graphA) {
+                edge("a", "b")
+                edge("b", "c")
+                edge("c", "d")
+
+                edge("a", "B")
+                edge("B", "C")
+                edge("C", "d")
+            }
+            thereIsAnUndirectedGraph("graphB") {
+                edge("a", "B")
+                edge("B", "C")
+                edge("C", "d")
+
+                edge("a", "b")
+                edge("b", "c")
+                edge("c", "d")
+            }
+        }
+        then {
+            hasShortestPath(graphA, "a", "b", "c", "d")
+            hasShortestPath("graphB", "a", "B", "C", "d")
+        }
+    }
 }
