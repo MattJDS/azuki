@@ -48,14 +48,14 @@ class ShortestPath : GraphScenario() {
                 edge("b", "c")
                 edge("c", "d")
 
-                edge("a", "B")
-                edge("B", "C")
-                edge("C", "d")
+                edge("a", "e")
+                edge("e", "f")
+                edge("f", "d")
             }
             thereIsAnUndirectedGraph("graphB") {
-                edge("a", "B")
-                edge("B", "C")
-                edge("C", "d")
+                edge("a", "e")
+                edge("e", "f")
+                edge("f", "d")
 
                 edge("a", "b")
                 edge("b", "c")
@@ -64,7 +64,7 @@ class ShortestPath : GraphScenario() {
         }
         then {
             hasShortestPath(graphA, "a", "b", "c", "d")
-            hasShortestPath("graphB", "a", "B", "C", "d")
+            hasShortestPath("graphB", "a", "e", "f", "d")
         }
     }
 }
